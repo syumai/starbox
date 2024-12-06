@@ -1,0 +1,27 @@
+{
+  "name": "starbox",
+  "version": "0.1.0",
+  "description": "JavaScript sandbox implementation powered by StarlingMonkey",
+  "main": "dist/starbox.js",
+  "author": "syumai",
+  "type": "module",
+  "types": "dist/starbox.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "mkdir -p tmp && jco componentize ./src/starbox.js --wit ./src/wit/starbox/world.wit -o ./tmp/starbox.wasm && jco transpile ./tmp/starbox.wasm -o ./dist"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/syumai/starbox.git"
+  },
+  "homepage": "https://github.com/syumai/starbox",
+  "devDependencies": {
+    "@bytecodealliance/componentize-js": "^0.15.0",
+    "@bytecodealliance/jco": "^1.8.1"
+  }
+}

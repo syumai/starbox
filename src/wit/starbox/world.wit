@@ -1,0 +1,5 @@
+package syumai:starbox;
+
+world starbox {
+  export run: func(src: string) -> string;
+}
